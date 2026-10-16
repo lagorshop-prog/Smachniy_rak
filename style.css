@@ -1,0 +1,955 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --navy:#03182b;
+  --navy2:#062844;
+  --blue:#0879c9;
+  --cyan:#12b7ff;
+  --red:#ff1738;
+  --red2:#ff3d55;
+  --white:#f7fbff;
+  --muted:#a9bdd0;
+  --card:#071f35;
+  --line:rgba(43,166,235,.25);
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Montserrat,Arial,sans-serif;
+  background:radial-gradient(circle at 75% 0%,#0a3557 0,#03182b 38%,#020d18 100%);
+  color:var(--white);
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(2,13,24,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(30,145,216,.22)
+}
+.nav{min-height:78px;display:flex;align-items:center;gap:28px;position:relative}
+.logo{width:62px;height:62px;object-fit:contain;filter:drop-shadow(0 8px 15px rgba(0,0,0,.35))}
+.brand{font-size:15px;font-weight:800;line-height:1.15;margin-right:auto}
+.brand span{color:var(--red)}
+.navlinks{display:flex;gap:25px;align-items:center}
+.navlinks a{font-size:13px;font-weight:700;color:#dbe9f5;position:relative;padding:29px 0}
+.navlinks a:hover,.navlinks a.active{color:#fff}
+.navlinks a.active:after{content:"";position:absolute;bottom:17px;left:0;right:0;height:2px;background:var(--red)}
+.phone{font-size:12px;font-weight:800;white-space:nowrap}
+.phone span{display:block;color:var(--muted);font-weight:500;margin-top:3px}
+.menu{display:none;background:none;border:0;color:white;font-size:27px}
+
+.hero{
+  min-height:650px;display:flex;align-items:center;
+  background:
+    linear-gradient(90deg,rgba(2,13,24,.96) 0%,rgba(2,13,24,.78) 40%,rgba(2,13,24,.1) 75%),
+    url("assets/hero-crayfish.png") center/cover no-repeat;
+  border-bottom:1px solid var(--line);
+}
+.hero-content{width:min(620px,100%);padding:80px 0}
+.kicker{font-size:13px;text-transform:uppercase;letter-spacing:3px;color:#7fd5ff;font-weight:800}
+h1{font-size:clamp(42px,6vw,78px);line-height:.98;margin:18px 0}
+h1 span{color:var(--red)}
+.hero p{font-size:17px;line-height:1.75;color:#d1dfeb;max-width:570px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:15px 24px;border-radius:12px;font-size:13px;font-weight:800;
+  border:1px solid transparent;transition:.2s;cursor:pointer
+}
+.btn-primary{background:linear-gradient(135deg,var(--red),#d8002a);box-shadow:0 10px 25px rgba(255,23,56,.25)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-outline{border-color:rgba(18,183,255,.55);color:#bde9ff;background:rgba(2,24,43,.45)}
+.btn-outline:hover{background:rgba(18,183,255,.1)}
+
+.features{background:#04192b;border-bottom:1px solid var(--line)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.feature{padding:28px 18px;text-align:center;border-right:1px solid var(--line)}
+.feature:last-child{border:0}
+.feature .icon{font-size:26px;margin-bottom:10px}
+.feature strong{display:block;font-size:13px}
+.feature small{display:block;color:var(--muted);margin-top:6px;font-size:11px}
+
+.section{padding:85px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+.section-head h2{font-size:38px;margin:0 0 14px}
+.section-head p{color:var(--muted);line-height:1.7}
+.redline{width:55px;height:4px;background:var(--red);margin:15px auto;border-radius:9px}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:linear-gradient(180deg,rgba(8,40,68,.96),rgba(3,24,42,.96));
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow)
+}
+.card-img{height:230px;overflow:hidden;background:#061d31}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-body{padding:24px}
+.card h3{margin:0 0 10px;font-size:20px}
+.card p{color:var(--muted);font-size:13px;line-height:1.7}
+.checks{padding:0;margin:18px 0;list-style:none}
+.checks li{font-size:12px;color:#d6e5f0;margin:9px 0}
+.checks li:before{content:"✓";color:var(--cyan);font-weight:900;margin-right:8px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.visual{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.visual img{width:100%;height:460px;object-fit:cover}
+.info h2{font-size:40px;margin:0 0 15px}
+.info p{color:var(--muted);line-height:1.8}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0}
+.stat{padding:17px;border:1px solid var(--line);border-radius:12px;background:rgba(4,28,48,.7)}
+.stat b{font-size:20px;display:block;color:#fff}
+.stat span{font-size:10px;color:var(--muted)}
+
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{
+  padding:25px;border:1px solid var(--line);border-radius:16px;background:#061e34
+}
+.product h3{margin:0 0 8px}
+.product .size{color:var(--cyan);font-size:12px;font-weight:800}
+.product .price{font-size:24px;font-weight:900;margin:18px 0}
+
+.contact{
+  background:linear-gradient(135deg,#061e34,#031423);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px}
+.contact-card{padding:32px;border:1px solid var(--line);border-radius:18px;background:rgba(5,29,49,.78)}
+.contact-card h3{margin-top:0;font-size:25px}
+.contact-list{display:grid;gap:18px;margin-top:25px}
+.contact-item{display:flex;gap:14px;align-items:flex-start}
+.contact-item .ci{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#0a385b;color:#7fd5ff}
+.contact-item strong{display:block;font-size:13px}
+.contact-item span{color:var(--muted);font-size:12px;display:block;margin-top:4px}
+.form{display:grid;gap:13px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+input,select,textarea{
+  width:100%;border:1px solid rgba(40,152,220,.4);background:#04182a;
+  color:white;border-radius:10px;padding:14px 15px;font:inherit;font-size:13px;outline:none
+}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(18,183,255,.1)}
+textarea{min-height:140px;resize:vertical}
+.form-note{font-size:11px;color:var(--muted);line-height:1.6}
+.success{display:none;color:#7df0b1;font-size:12px;padding:12px;border:1px solid rgba(125,240,177,.25);border-radius:10px;background:rgba(35,160,90,.08)}
+
+.page-hero{padding:85px 0 55px;background:linear-gradient(180deg,#061f36,#03182b)}
+.page-hero h1{font-size:clamp(40px,5vw,62px);max-width:800px}
+.page-hero p{max-width:700px;color:var(--muted);line-height:1.8}
+.breadcrumb{font-size:11px;color:#6ea9c9;margin-bottom:20px}
+
+.footer{padding:30px 0;background:#020c16;border-top:1px solid var(--line)}
+.footer-inner{display:flex;align-items:center;gap:20px}
+.footer-logo{width:50px;height:50px}
+.footer small{color:var(--muted)}
+.footer-phone{margin-left:auto;font-weight:800;font-size:13px}
+
+@media(max-width:900px){
+ .navlinks{display:none}
+ .navlinks.mobile-open{
+  display:flex;
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  z-index:100;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  padding:8px 18px 14px;
+  background:rgba(2,13,24,.98);
+  border:1px solid rgba(30,145,216,.28);
+  border-top:0;
+  border-radius:0 0 12px 12px;
+  box-shadow:0 18px 35px rgba(0,0,0,.4);
+ }
+ .navlinks.mobile-open a{
+  display:block;
+  padding:15px 4px;
+  font-size:14px;
+  border-bottom:1px solid rgba(43,166,235,.16);
+ }
+ .navlinks.mobile-open a:last-child{border-bottom:0}
+ .navlinks.mobile-open a.active:after{display:none}
+ .menu{display:block;cursor:pointer;position:relative;z-index:101;padding:8px 10px;line-height:1}
+ .feature-grid{grid-template-columns:1fr 1fr}
+ .cards,.product-grid{grid-template-columns:1fr}
+ .split,.contact-grid{grid-template-columns:1fr}
+ .hero{min-height:620px}
+ .hero-content{padding:70px 0}
+}
+@media(max-width:600px){
+ .brand{display:none}
+ .phone{display:none}
+ .nav{min-height:68px}
+ .logo{width:54px;height:54px}
+ .feature-grid{grid-template-columns:1fr}
+ .feature{border-right:0;border-bottom:1px solid var(--line)}
+ .form-row{grid-template-columns:1fr}
+ .section{padding:60px 0}
+ .visual img{height:330px}
+}
+
+
+/* ============================================================
+   ДОДАТКОВІ СТИЛІ ПІСЛЯ ОНОВЛЕННЯ САЙТУ
+   1. Компактна вкладка зворотного зв'язку.
+   2. Вікно форми.
+   3. Соціальні іконки у підвалі.
+   4. Картинки товарів з однаковою висотою.
+   ============================================================ */
+
+/* 1. Маленька вкладка праворуч екрана. */
+.feedback-tab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:100;background:var(--red);color:#fff;padding:14px 9px;border-radius:12px 0 0 12px;writing-mode:vertical-rl;font-size:11px;font-weight:800;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+/* 2. Приховане вікно форми, яке відкривається натисканням вкладки. */
+.feedback-panel{position:fixed;right:18px;bottom:18px;width:min(390px,calc(100% - 36px));background:#061e34;border:1px solid var(--line);border-radius:18px;padding:22px;z-index:101;box-shadow:0 25px 80px rgba(0,0,0,.55);display:none}
+.feedback-panel.open{display:block}
+.feedback-panel h3{margin:0 0 8px;font-size:20px}
+.feedback-panel .panel-phone{font-size:16px;font-weight:900;margin-bottom:16px}
+.feedback-close{position:absolute;right:12px;top:10px;border:0;background:none;color:#9bb2c4;font-size:22px;cursor:pointer}
+/* 3. Соціальні іконки. Посилання залишені порожніми навмисно. */
+.socials{display:flex;gap:9px;margin-left:10px}
+.social{width:34px;height:34px;border:1px solid var(--line);border-radius:9px;display:grid;place-items:center;color:#b8d5e8;font-size:14px;font-weight:900;transition:.2s}
+.social:hover{background:var(--red);color:#fff;border-color:var(--red)}
+/* 4. Однаковий розмір фото в цінових картках. */
+.product .card-img{height:190px;margin:-25px -25px 20px}
+.product .card-img img{width:100%;height:100%;object-fit:cover}
+@media(max-width:600px){.footer-inner{flex-wrap:wrap}.footer-phone{margin-left:0;width:100%}.socials{margin-left:0}.feedback-panel{bottom:10px}}
+/* =====================================================
+   ДОДАТКОВИЙ БЛОК ЗВОРОТНОГО ЗВ'ЯЗКУ ПЕРЕД FOOTER
+   ===================================================== */
+
+.contact-section {
+    width: 100%;
+    padding: 80px 5%;
+    background: #041d30;
+    box-sizing: border-box;
+}
+
+.contact-section-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 34px;
+}
+
+/* Ліва картка */
+
+.contact-info,
+.contact-form {
+    border: 1px solid #155275;
+    border-radius: 18px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.contact-info {
+    min-height: 405px;
+}
+
+.contact-label {
+    color: #58c7ff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: #fff;
+    font-size: 27px;
+    margin: 5px 0 24px;
+}
+
+.contact-info > p {
+    color: #9bc4e5;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Інформаційні рядки */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.contact-icon {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0d456b;
+    border-radius: 12px;
+
+    color: #58c7ff;
+    font-size: 20px;
+}
+
+.contact-item strong {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.contact-item span,
+.contact-item a {
+    display: block;
+    color: #8db9d9;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #58c7ff;
+}
+
+/* Форма */
+
+.contact-form {
+    min-height: 405px;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #061f32;
+    border: 1px solid #155a80;
+    border-radius: 10px;
+
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.contact-form input,
+.contact-form select {
+    height: 46px;
+    padding: 0 16px;
+}
+
+.contact-form select {
+    margin-top: 13px;
+}
+
+.contact-form textarea {
+    height: 140px;
+    padding: 16px;
+    margin-top: 13px;
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #607e93;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #35b9ff;
+}
+
+/* Кнопка */
+
+.contact-submit {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 13px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #ff1238;
+    color: #000;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.contact-submit:hover {
+    background: #ff3152;
+    box-shadow: 0 10px 25px rgba(255, 18, 56, .25);
+}
+
+.contact-note {
+    margin-top: 13px;
+    color: #7ea7c7;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.contact-success {
+    display: none;
+    margin-top: 10px;
+    color: #52d98a;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   МОБІЛЬНА ВЕРСІЯ
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .contact-section {
+        padding: 50px 18px;
+    }
+
+    .contact-section-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 24px;
+        min-height: auto;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 23px;
+    }
+
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Банер сторінки малька */
+.page-hero.category-banner.banner-malok {
+    position: relative;
+    isolation: isolate;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+
+    background-image: url("assets/banner-malok.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Затемнення зліва, щоб текст було добре видно */
+.page-hero.category-banner.banner-malok::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(2, 18, 32, 0.96) 0%,
+        rgba(2, 18, 32, 0.78) 45%,
+        rgba(2, 18, 32, 0.12) 100%
+    );
+}
+
+/* Текст банера */
+.page-hero.category-banner.banner-malok h1 {
+    max-width: 700px;
+    font-size: clamp(32px, 4vw, 52px);
+}
+
+.page-hero.category-banner.banner-malok p {
+    max-width: 570px;
+    line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+    .page-hero.category-banner.banner-malok {
+        min-height: 380px;
+        padding: 45px 0;
+        background-position: 60% center;
+    }
+
+    .page-hero.category-banner.banner-malok::before {
+        background: rgba(2, 18, 32, 0.72);
+    }
+}
+/* Банер сторінки маточне поголівя */
+.page-hero.category-banner.banner-matocne {
+    position: relative;
+    isolation: isolate;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+
+    background-image: url("assets/banner-matocne.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Затемнення зліва, щоб текст було добре видно */
+.page-hero.category-banner.banner-matocne::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(2, 18, 32, 0.96) 0%,
+        rgba(2, 18, 32, 0.78) 45%,
+        rgba(2, 18, 32, 0.12) 100%
+    );
+}
+
+/* Текст банера */
+.page-hero.category-banner.banner-matocne h1 {
+    max-width: 700px;
+    font-size: clamp(32px, 4vw, 52px);
+}
+
+.page-hero.category-banner.banner-matocne p {
+    max-width: 570px;
+    line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+    .page-hero.category-banner.banner-matocne {
+        min-height: 380px;
+        padding: 45px 0;
+        background-position: 60% center;
+    }
+
+    .page-hero.category-banner.banner-matocne:before {
+        background: rgba(2, 18, 32, 0.72);
+    }
+}
+/* Фотографії мальків у картках товарів */
+.product-photo {
+    width: 100%;
+    height: 230px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #071b2d;
+}
+
+.product-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+/* Легке збільшення фотографії при наведенні */
+.product:hover .product-photo img {
+    transform: scale(1.05);
+}
+
+/* Адаптація для телефонів */
+@media (max-width: 600px) {
+    .product-photo {
+        height: 210px;
+    }
+}
+/* ===== Контактний блок перед футером ===== */
+
+.contact-section {
+    padding: 65px 0;
+    background: #031827;
+    color: #fff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 35px;
+    align-items: stretch;
+}
+
+.contact-info,
+.contact-form-card {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 32px;
+    background: #051d2e;
+    border: 1px solid #124563;
+    border-radius: 19px;
+}
+
+.contact-info .kicker {
+    margin-bottom: 3px;
+    color: #59c7ff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.contact-info h2,
+.contact-form-card h2 {
+    margin: 0 0 25px;
+    color: #fff;
+    font-size: 25px;
+    line-height: 1.3;
+}
+
+.contact-description {
+    margin: 0 0 25px;
+    color: #b9d0e8;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.contact-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.contact-icon {
+    display: flex;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #0a3b5c;
+    color: #69d0ff;
+    font-size: 21px;
+}
+
+.contact-feature strong,
+.contact-feature span,
+.contact-feature a {
+    display: block;
+    font-size: 13px;
+}
+
+.contact-feature strong {
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.contact-feature span,
+.contact-feature a {
+    color: #b9d0e8;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.contact-form-card h2 {
+    margin-bottom: 24px;
+}
+
+.footer-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.contact-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.footer-contact-form input,
+.footer-contact-form select,
+.footer-contact-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #145071;
+    border-radius: 11px;
+    outline: none;
+    background: #031827;
+    color: #fff;
+    font: inherit;
+    font-size: 13px;
+}
+
+.footer-contact-form input,
+.footer-contact-form select {
+    min-height: 46px;
+}
+
+.footer-contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.footer-contact-form input::placeholder,
+.footer-contact-form textarea::placeholder {
+    color: #7189a1;
+}
+
+.footer-contact-form input:focus,
+.footer-contact-form select:focus,
+.footer-contact-form textarea:focus {
+    border-color: #43bfff;
+}
+
+.footer-contact-form select option {
+    background: #031827;
+    color: #fff;
+}
+
+.footer-contact-form .btn {
+    width: 100%;
+    min-height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-note {
+    margin: 0;
+    color: #9db5cf;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Адаптація для планшетів і телефонів */
+@media (max-width: 800px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info h2,
+    .contact-form-card h2 {
+        font-size: 22px;
+    }
+}
+/* ===== Відеоролик у блоці контактів ===== */
+
+.contact-video-card {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 32px;
+    background: #051d2e;
+    border: 1px solid #124563;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-video-card h2 {
+    margin: 0 0 24px;
+    color: #fff;
+    font-size: 25px;
+    line-height: 1.3;
+}
+
+.contact-video {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #020d16;
+    aspect-ratio: 16 / 9;
+}
+
+.contact-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-video-caption {
+    margin: 16px 0 0;
+    color: #b9d0e8;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+    .contact-video-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-video-card h2 {
+        font-size: 22px;
+    }
+}
+/* ==========================================
+   МОБІЛЬНІ ТЕЛЕФОНИ
+   ========================================== */
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 28px 0;
+    }
+
+    .contact-section .container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .contact-info,
+    .contact-video-card {
+        width: 100%;
+        min-width: 0;
+        padding: 20px 18px;
+        border-radius: 15px;
+    }
+
+    .contact-info h2,
+    .contact-video-card h2 {
+        font-size: 22px;
+        line-height: 1.35;
+    }
+
+    .contact-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .contact-feature {
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .contact-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-video-card h2 {
+        margin-bottom: 18px;
+    }
+
+    .contact-video {
+        aspect-ratio: 16 / 9;
+    }
+
+    .contact-video-caption {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* Підвал на телефоні */
+    .footer {
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .footer .container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .footer-inner small {
+        line-height: 1.6;
+    }
+
+    .footer-phone {
+        white-space: nowrap;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+}
+/* Відео на всю ширину контейнера */
+.contact-video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #020d16;
+    box-sizing: border-box;
+}
+
+.contact-video video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    box-sizing: border-box;
+}
+.contact-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
